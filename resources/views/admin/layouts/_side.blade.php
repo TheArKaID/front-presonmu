@@ -17,7 +17,7 @@
                                 <span class="mini-click-non">Setting</span>
                             </a>
                         <ul class="submenu-angle" aria-expanded="true">
-                            <li><a title="Dashboard v.1" href="/dashboard/tahunaktif"><span class="mini-sub-pro">Tahun Aktif</span></a></li>
+                            <li><a title="Dashboard v.1" href="/dashboard/tahun"><span class="mini-sub-pro">Tahun</span></a></li>
                             <li><a title="Dashboard v.2" href="/dashboard/apaitu"><span class="mini-sub-pro">Apa itu MH</span></a></li>
                             <li><a title="Dashboard v.3" href="/dashboard/kegiatan"><span class="mini-sub-pro">Kegiatan</span></a></li>
                             <li><a title="Analytics" href="/dashboard/alur"><span class="mini-sub-pro">Alur</span></a></li>

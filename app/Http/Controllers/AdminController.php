@@ -57,9 +57,9 @@ class AdminController extends Controller
         return redirect('/admin');
     }
 
-    public function tahunAktif()
+    public function tahun()
     {
-        return view('admin.settings.tahunaktif');
+        return view('admin.settings.tahun');
     }
 
     public function apaItu()
@@ -80,5 +80,26 @@ class AdminController extends Controller
     public function kesan()
     {
         return view('admin.settings.kesan');
+    }
+
+    public function tambahTahun(Request $request)
+    {
+        $request->request->add(['ajaran' => $request->tahunmulai .'/'. $request->tahunselesai]);
+
+        $this->validate($request,[
+            'tahunmulai' => 'required|max:4',
+            'tahunselesai' => 'required|max:4',
+            'ajaran' => 'unique:tahun'
+        ]);
+
+        if(($request->tahunselesai-$request->tahunmulai)!=1){
+            return redirect('/dashboard/tahun')->withErrors(['tahunbeda'=>'The different should be 1 year'])->with(['tahunmulai' => $request->tahunmulai, 'tahunselesai' => $request->tahunselesai]);
+        }
+
+        $ajaran = new \App\Tahun;
+        $ajaran->ajaran = $request->tahunmulai .'/'. $request->tahunselesai;
+        $ajaran->save();
+
+        return redirect('/dashboard/tahun')->with('sukses', 'Tahun Ajaran Berhasil ditambahkan');
     }
 }
