@@ -1,11 +1,15 @@
 @extends('admin.layouts.master')
 
+@section('title')
+    Dashboard | Presonmu
+@endsection
+
 @section('content')
 <div class="analytics-sparkle-area">
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-                <div class="analytics-sparkle-line reso-mg-b-30">
+                <div class="analytics-sparkle-line reso-mg-b-30 mg-t-30">
                     <div class="analytics-content">
                         <h5>Pendaftar</h5>
                         <h2><span class="counter">{{$pendaftar->count()}}</span> <span class="tuition-fees">Orang</span></h2>
@@ -17,7 +21,7 @@
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-                <div class="analytics-sparkle-line reso-mg-b-30">
+                <div class="analytics-sparkle-line reso-mg-b-30 mg-t-30">
                     <div class="analytics-content">
                         <h5>Peserta</h5>
                         <h2><span class="counter">{{$peserta->count()}}</span> <span class="tuition-fees">Orang</span></h2>
@@ -29,7 +33,7 @@
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-                <div class="analytics-sparkle-line reso-mg-b-30 table-mg-t-pro dk-res-t-pro-30">
+                <div class="analytics-sparkle-line reso-mg-b-30 mg-t-30 table-mg-t-pro dk-res-t-pro-30">
                     <div class="analytics-content">
                         <h5>Presensi Sesi 1</h5>
                         @php
@@ -49,7 +53,7 @@
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
-                <div class="analytics-sparkle-line table-mg-t-pro dk-res-t-pro-30">
+                <div class="analytics-sparkle-line reso-mg-b-30 mg-t-30 table-mg-t-pro dk-res-t-pro-30">
                     <div class="analytics-content">
                         <h5>Presensi Sesi 2</h5>
                         @php

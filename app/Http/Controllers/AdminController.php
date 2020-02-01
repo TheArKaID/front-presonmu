@@ -9,6 +9,11 @@ use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
+    function tahunAktif()
+    {
+        return \App\Informasi::all()->first()->tahun_aktif;    
+    }
+    
     public function login()
     {
         return view('admin.login');
@@ -38,7 +43,7 @@ class AdminController extends Controller
         $start2 = Carbon::create(Carbon::now('America/Detroit')->format('Y-m-d').' 18:00:00');
         $end2 = Carbon::create(Carbon::now('America/Detroit')->format('Y-m-d').' 21:00:00');
 
-        $tahunajaran = \App\Informasi::all()->first()->tahun_aktif;
+        $tahunajaran = $this->tahunAktif();
         $pendaftar = \App\Pendaftar::where('tahun', $tahunajaran);
         $peserta = \App\User::where('tahun', $tahunajaran);
         $presensi1 = \App\Riwayat::whereBetween('created_at', [$start1, $end1])->get();
@@ -61,11 +66,9 @@ class AdminController extends Controller
     public function tahun()
     {
         $tahun = \App\Tahun::pluck('ajaran', 'ajaran');
-        $tahunaktif = \App\Informasi::all();
-        $tahunaktif = $tahunaktif->first()->tahun_aktif;
         // dd($tahunaktif);
         // dd($tahun);
-        return view('admin.settings.tahun', ['tahun' => $tahun, 'tahunaktif' => $tahunaktif]);
+        return view('admin.settings.tahun', ['tahun' => $tahun, 'tahunaktif' => $this->tahunAktif()]);
     }
 
     public function tentang()
@@ -116,5 +119,12 @@ class AdminController extends Controller
         $informasi->save();
         // dd($informasi->tahun_aktif);
         return redirect('/dashboard/tahun')->with('sukses', 'Tahun Aktif Telah Diubah');
+    }
+
+    public function pendaftar()
+    {
+        $pendaftar = \App\Pendaftar::where('tahun', $this->tahunAktif())->get();
+        
+        return view('admin.pendaftar', ['pendaftar' => $pendaftar]);
     }
 }

@@ -42,14 +42,14 @@
     <!-- morrisjs CSS
 		============================================ -->
     <link rel="stylesheet" href="{{asset('/adminres/css/morrisjs/morris.css')}}">
-    <!-- mCustomScrollbar CSS
+    <!-- mCustomScrollbar CSS - Bagian Atas, tempat Notification dan Message
 		============================================ -->
     <link rel="stylesheet" href="{{asset('/adminres/css/scrollbar/jquery.mCustomScrollbar.min.css')}}">
-    <!-- metisMenu CSS
+    <!-- metisMenu CSS - Bagiannya Side Bar
 		============================================ -->
     <link rel="stylesheet" href="{{asset('/adminres/css/metisMenu/metisMenu.min.css')}}">
     <link rel="stylesheet" href="{{asset('/adminres/css/metisMenu/metisMenu-vertical.css')}}">
-    <!-- calendar CSS
+    <!-- calendar CSS - Bagian Atas, tempat Notification dan Message
 		============================================ -->
     <link rel="stylesheet" href="{{asset('/adminres/css/calendar/fullcalendar.min.css')}}">
     <link rel="stylesheet" href="{{asset('/adminres/css/calendar/fullcalendar.print.min.css')}}">
@@ -59,9 +59,11 @@
     <!-- responsive CSS
 		============================================ -->
     <link rel="stylesheet" href="{{asset('/adminres/css/responsive.css')}}">
-    {{-- <!-- modernizr JS
+    <!-- modernizr JS
 		============================================ -->
-    <script src="{{asset('/adminres/js/vendor/modernizr-2.8.3.min.js')}}"></script> --}}
+    <script src="{{asset('/adminres/js/vendor/modernizr-2.8.3.min.js')}}"></script>
+    
+    @yield('header')
 </head>
 
 <body>
@@ -97,52 +99,52 @@
     <!-- bootstrap JS
 		============================================ -->
     <script src="{{asset('/adminres/js/bootstrap.min.js')}}"></script>
-    {{-- <!-- wow JS
+    <!-- wow JS
 		============================================ -->
-    <script src="{{asset('/adminres/js/wow.min.js')}}"></script> --}}
+    <script src="{{asset('/adminres/js/wow.min.js')}}"></script>
     <!-- price-slider JS
 		============================================ -->
     <script src="{{asset('/adminres/js/jquery-price-slider.js')}}"></script>
     <!-- meanmenu JS
 		============================================ -->
     <script src="{{asset('/adminres/js/jquery.meanmenu.js')}}"></script>
-    {{-- <!-- owl.carousel JS
+    <!-- owl.carousel JS
 		============================================ -->
-    <script src="{{asset('/adminres/js/owl.carousel.min.js')}}"></script> --}}
+    <script src="{{asset('/adminres/js/owl.carousel.min.js')}}"></script>
     <!-- sticky JS
 		============================================ -->
     <script src="{{asset('/adminres/js/jquery.sticky.js')}}"></script>
-    {{-- <!-- scrollUp JS
+    <!-- scrollUp JS
 		============================================ -->
-    <script src="{{asset('/adminres/js/jquery.scrollUp.min.js')}}"></script> --}}
+    <script src="{{asset('/adminres/js/jquery.scrollUp.min.js')}}"></script>
     <!-- counterup JS
 		============================================ -->
     <script src="{{asset('/adminres/js/counterup/jquery.counterup.min.js')}}"></script>
     <script src="{{asset('/adminres/js/counterup/waypoints.min.js')}}"></script>
     <script src="{{asset('/adminres/js/counterup/counterup-active.js')}}"></script>
-    {{-- <!-- mCustomScrollbar JS
+    <!-- mCustomScrollbar JS
 		============================================ -->
     <script src="{{asset('/adminres/js/scrollbar/jquery.mCustomScrollbar.concat.min.js')}}"></script>
-    <script src="{{asset('/adminres/js/scrollbar/mCustomScrollbar-active.js')}}"></script> --}}
+    <script src="{{asset('/adminres/js/scrollbar/mCustomScrollbar-active.js')}}"></script>
     <!-- metisMenu JS
 		============================================ -->
     <script src="{{asset('/adminres/js/metisMenu/metisMenu.min.js')}}"></script>
     <script src="{{asset('/adminres/js/metisMenu/metisMenu-active.js')}}"></script>
-    {{-- <!-- morrisjs JS
+    <!-- morrisjs JS
 		============================================ -->
     <script src="{{asset('/adminres/js/morrisjs/raphael-min.js')}}"></script>
     <script src="{{asset('/adminres/js/morrisjs/morris.js')}}"></script>
-    <script src="{{asset('/adminres/js/morrisjs/morris-active.js')}}"></script> --}}
-    {{-- <!-- morrisjs JS
+    <script src="{{asset('/adminres/js/morrisjs/morris-active.js')}}"></script>
+    <!-- morrisjs JS
 		============================================ -->
     <script src="{{asset('/adminres/js/sparkline/jquery.sparkline.min.js')}}"></script>
     <script src="{{asset('/adminres/js/sparkline/jquery.charts-sparkline.js')}}"></script>
-    <script src="{{asset('/adminres/js/sparkline/sparkline-active.js')}}"></script> --}}
-    {{-- <!-- calendar JS
+    <script src="{{asset('/adminres/js/sparkline/sparkline-active.js')}}"></script>
+    <!-- calendar JS
 		============================================ -->
     <script src="{{asset('/adminres/js/calendar/moment.min.js')}}"></script>
     <script src="{{asset('/adminres/js/calendar/fullcalendar.min.js')}}"></script>
-    <script src="{{asset('/adminres/js/calendar/fullcalendar-active.js')}}"></script> --}}
+    <script src="{{asset('/adminres/js/calendar/fullcalendar-active.js')}}"></script>
     <!-- plugins JS
 		============================================ -->
     <script src="{{asset('/adminres/js/plugins.js')}}"></script>
