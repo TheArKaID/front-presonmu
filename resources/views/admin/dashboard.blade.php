@@ -35,7 +35,10 @@
                         @php
                             $a = $sesi1->count();
                             $b = $peserta->count();
-                            $presensi1 = round(($a/$b)*100);
+                            if($a!=0 || $b!=0)
+                                $presensi1 = round(($a/$b)*100);
+                            else
+                                $presensi1 = 0;
                         @endphp
                         <h2><span class="counter">{{$sesi1->count()}}</span> <span class="tuition-fees">Orang</span></h2>
                         <span class="text-info">{{$presensi1}}%</span>
@@ -52,7 +55,10 @@
                         @php
                             $a = $sesi2->count();
                             $b = $peserta->count();
-                            $presensi2 = round(($a/$b)*100);
+                            if($a!=0 || $b!=0)
+                                $presensi2 = round(($a/$b)*100);
+                            else
+                                $presensi2 = 0;
                         @endphp
                         <h2><span class="counter">{{$sesi2->count()}}</span> <span class="tuition-fees">Orang</span></h2>
                         <span class="text-inverse">{{$presensi2}}%</span>

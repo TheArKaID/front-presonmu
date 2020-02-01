@@ -1,5 +1,5 @@
 @extends('admin.layouts.master')
 
 @section('content')
-Setting Apa itu
+    Setting Tentang
 @endsection

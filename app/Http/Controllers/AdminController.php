@@ -38,8 +38,9 @@ class AdminController extends Controller
         $start2 = Carbon::create(Carbon::now('America/Detroit')->format('Y-m-d').' 18:00:00');
         $end2 = Carbon::create(Carbon::now('America/Detroit')->format('Y-m-d').' 21:00:00');
 
-        $pendaftar = \App\Pendaftar::all();
-        $peserta = \App\User::all();
+        $tahunajaran = \App\Informasi::all()->first()->tahun_aktif;
+        $pendaftar = \App\Pendaftar::where('tahun', $tahunajaran);
+        $peserta = \App\User::where('tahun', $tahunajaran);
         $presensi1 = \App\Riwayat::whereBetween('created_at', [$start1, $end1])->get();
         $presensi2 = \App\Riwayat::whereBetween('created_at', [$start2, $end2])->get();
         // dd(Carbon::now('Asia/Jakarta'));
@@ -67,9 +68,9 @@ class AdminController extends Controller
         return view('admin.settings.tahun', ['tahun' => $tahun, 'tahunaktif' => $tahunaktif]);
     }
 
-    public function apaItu()
+    public function tentang()
     {
-        return view('admin.settings.apaitu');
+        return view('admin.settings.tentang');
     }
 
     public function kegiatan()
