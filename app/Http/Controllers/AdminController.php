@@ -59,7 +59,12 @@ class AdminController extends Controller
 
     public function tahun()
     {
-        return view('admin.settings.tahun');
+        $tahun = \App\Tahun::pluck('ajaran', 'ajaran');
+        $tahunaktif = \App\Informasi::all();
+        $tahunaktif = $tahunaktif->first()->tahun_aktif;
+        // dd($tahunaktif);
+        // dd($tahun);
+        return view('admin.settings.tahun', ['tahun' => $tahun, 'tahunaktif' => $tahunaktif]);
     }
 
     public function apaItu()
@@ -100,6 +105,15 @@ class AdminController extends Controller
         $ajaran->ajaran = $request->tahunmulai .'/'. $request->tahunselesai;
         $ajaran->save();
 
-        return redirect('/dashboard/tahun')->with('sukses', 'Tahun Ajaran Berhasil ditambahkan');
+        return redirect('/dashboard/tahun')->with('sukses', 'Tahun Ajaran Berhasil Ditambahkan');
+    }
+
+    public function simpanTahun(Request $request)
+    {
+        $informasi = \App\Informasi::all()->first();
+        $informasi->tahun_aktif = $request->tahun;
+        $informasi->save();
+        // dd($informasi->tahun_aktif);
+        return redirect('/dashboard/tahun')->with('sukses', 'Tahun Aktif Telah Diubah');
     }
 }
