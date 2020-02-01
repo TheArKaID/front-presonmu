@@ -40,7 +40,7 @@
                                     <tr>
                                         <td>{{$no}}</td>
                                         <td>{{$p->nama}}</td>
-                                        <td>{{$p->jenis_kelamin}}</td>
+                                        <td>{{$p->jenis_kelamin=='L' ? 'Laki-laki' : 'Perempuan'}}</td>
                                         <td>{{$p->email}}</td>
                                         <td>{{$p->telpon}}</td>
                                         {{-- <td>{{$p->alasan}}</td> --}}

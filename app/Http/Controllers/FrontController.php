@@ -17,9 +17,11 @@ class FrontController extends Controller
         // dd($request->all());
 
         $pendaftar = new Pendaftar;
+
         $pendaftar->nama = $request->nama;
         $pendaftar->email = $request->email;
         $pendaftar->telpon = $request->telpon;
+        $pendaftar->tahun = \App\Informasi::all()->first()->tahun_aktif;
         $pendaftar->jenis_kelamin = $request->jenis_kelamin;
         $pendaftar->alasan = $request->alasan===null ? '' : $request->alasan;
         $pendaftar->save();
