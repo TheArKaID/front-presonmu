@@ -12,8 +12,8 @@
 			datasets: [{
 				label: "My First dataset",
 				fill: false,
-                backgroundColor: '#006DF0',
-				borderColor: '#006DF0',
+                backgroundColor: '#1e732f',
+				borderColor: '#1e732f',
 				data: [0, -20, 20, -20, 20, -20, 20]
             }]
 		},
@@ -69,8 +69,8 @@
 			datasets: [{
 				label: "My First dataset",
 				fill: 'origin',
-                backgroundColor: '#006DF0',
-				borderColor: '#006DF0',
+                backgroundColor: '#1e732f',
+				borderColor: '#1e732f',
 				data: [0, -20, 20, -20, 20, -20, 20]
             }]
 		},
@@ -125,8 +125,8 @@
 			datasets: [{
 				label: "My First dataset",
 				fill: 'start',
-                backgroundColor: '#006DF0',
-				borderColor: '#006DF0',
+                backgroundColor: '#1e732f',
+				borderColor: '#1e732f',
 				data: [0, 10, 20, 30, 40, 50, 100]
             }]
 		},
@@ -183,8 +183,8 @@
 			datasets: [{
 				label: "My First dataset",
 				fill: 'end',
-                backgroundColor: '#006DF0',
-				borderColor: '#006DF0',
+                backgroundColor: '#1e732f',
+				borderColor: '#1e732f',
 				data: [100, 90, 70, 60, 50, 40, 0]
             }]
 		},
@@ -239,8 +239,8 @@
 			labels: ["January", "February", "March", "April", "May", "June", "July"],
 			datasets: [{
 				label: 'D0',
-                backgroundColor: '#006DF0',
-				borderColor: '#006DF0',
+                backgroundColor: '#1e732f',
+				borderColor: '#1e732f',
 				data: [100, 90, 70, 60, 50, 40, 0]
             },{
 				label: 'D1',
@@ -305,13 +305,13 @@
 			labels: ["January", "February", "March", "April", "May", "June", "July"],
 			datasets: [{
 				label: "My First dataset",
-                backgroundColor: '#006DF0',
+                backgroundColor: '#1e732f',
 				borderColor: '#',
 				data: [100, 90, 70, 60, 50, 40, 0],
 				borderWidth: 1,
 				pointStyle: 'rectRot',
 				pointRadius: 5,
-				pointBorderColor: '#006DF0'
+				pointBorderColor: '#1e732f'
             }]
 		},
 		options: {

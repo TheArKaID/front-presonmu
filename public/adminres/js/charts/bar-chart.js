@@ -310,7 +310,7 @@
 			labels: ["January", "February", "March", "April", "May", "June", "July"],
 			datasets: [{
                 label: 'Dataset 1',
-                backgroundColor: '#006DF0',
+                backgroundColor: '#1e732f',
 				data: [12, 19, 3, -5, -2, 3, 9]
             }, {
                 label: 'Dataset 2',

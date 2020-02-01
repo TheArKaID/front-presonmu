@@ -42,7 +42,7 @@
                     defaultFill: "#DBDAD6"
                 },
                 geographyConfig: {
-                    highlightFillColor: '#006DF0',
+                    highlightFillColor: '#1e732f',
                     highlightBorderWidth: 0,
                 },
             });
@@ -52,10 +52,10 @@
                 responsive: true,
                 fills: {
                     defaultFill: "#DBDAD6",
-                    active: "#006DF0"
+                    active: "#1e732f"
                 },
                 geographyConfig: {
-                    highlightFillColor: '#006DF0',
+                    highlightFillColor: '#1e732f',
                     highlightBorderWidth: 0,
                 },
                 data: {
@@ -72,10 +72,10 @@
                 scope: 'usa',
                 fills: {
                     defaultFill: "#DBDAD6",
-                    active: "#006DF0"
+                    active: "#1e732f"
                 },
                 geographyConfig: {
-                    highlightFillColor: '#006DF0',
+                    highlightFillColor: '#1e732f',
                     highlightBorderWidth: 0
                 },
                 data: {
@@ -138,11 +138,11 @@
                 responsive: true,
                 fills: {
                     defaultFill: "#F2F2F0",
-                    active: "#006DF0",
-                    usa: "#006DF0"
+                    active: "#1e732f",
+                    usa: "#1e732f"
                 },
                 geographyConfig: {
-                    highlightFillColor: '#006DF0',
+                    highlightFillColor: '#1e732f',
                     highlightBorderWidth: 0
                 },
                 data: {
@@ -165,7 +165,7 @@
                         { origin: 'USA', destination: 'AUS'},
                         { origin: 'USA', destination: 'BRA'}
                     ],
-                    { strokeColor: '#006DF0', strokeWidth: 1}
+                    { strokeColor: '#1e732f', strokeWidth: 1}
             );
 			
 	

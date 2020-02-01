@@ -44,12 +44,12 @@ Morris.Area({
         labels: ['Python', 'PHP', 'Java'],
         pointSize: 0,
         fillOpacity: 0.99,
-        pointStrokeColors:['#65b12d', '#933EC5 ', '#006DF0'],
+        pointStrokeColors:['#65b12d', '#933EC5 ', '#1e732f'],
         behaveLikeLine: true,
         gridLineColor: '#e0e0e0',
         lineWidth:0,
         hideHover: 'auto',
-        lineColors: ['#65b12d', '#933EC5 ', '#006DF0'],
+        lineColors: ['#65b12d', '#933EC5 ', '#1e732f'],
         resize: true
         
     });
@@ -98,12 +98,12 @@ Morris.Area({
         labels: ['CSE', 'Accounting', 'Electrical'],
         pointSize: 3,
         fillOpacity: 0,
-        pointStrokeColors:['#006DF0', '#933EC5', '#65b12d'],
+        pointStrokeColors:['#1e732f', '#933EC5', '#65b12d'],
         behaveLikeLine: true,
         gridLineColor: '#e0e0e0',
         lineWidth: 1,
         hideHover: 'auto',
-        lineColors: ['#006DF0', '#933EC5', '#65b12d'],
+        lineColors: ['#1e732f', '#933EC5', '#65b12d'],
         resize: true
         
     });

@@ -44,7 +44,7 @@
                                         <td>{{$p->email}}</td>
                                         <td>{{$p->telpon}}</td>
                                         {{-- <td>{{$p->alasan}}</td> --}}
-                                        <td><a class="btn btn-primary" style="background: #006DF0;border-radius: 3px;" href="#" data-toggle="modal" data-target="#PrimaryModalhdbgcl" onclick="showAlasan('{{$p->alasan}}')">Alasan</a></td>
+                                        <td><a class="btn btn-primary" style="background: #1e732f;border-radius: 3px;" href="#" data-toggle="modal" data-target="#PrimaryModalhdbgcl" onclick="showAlasan('{{$p->alasan}}')">Alasan</a></td>
                                     </tr>
                                     @php
                                         $no++;

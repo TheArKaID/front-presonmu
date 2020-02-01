@@ -16,7 +16,7 @@
 					'#933EC5',
 					'#65b12d',
 					'#D80027',
-					'#006DF0'
+					'#1e732f'
 				],
 				data: [10, 20, 30, 40, 60]
             }]
@@ -41,7 +41,7 @@
 					'#933EC5',
 					'#65b12d',
 					'#D80027',
-					'#006DF0'
+					'#1e732f'
 				],
 				
             }]
@@ -79,8 +79,8 @@
 			datasets: [{
 				label: "My First dataset",
 				data: [90, 20, 30, 40, 10],
-                backgroundColor: '#006DF0',
-                borderColor: '#006DF0',
+                backgroundColor: '#1e732f',
+                borderColor: '#1e732f',
                 pointBackgroundColor: '#ff0000',
 				
             },{
@@ -118,7 +118,7 @@
 			datasets: [{
 				label: 'Dataset 1',
 				data: [10, 20, 30, 40, 90],
-                backgroundColor: '#006DF0'
+                backgroundColor: '#1e732f'
 				
             }]
 		},
