@@ -9,7 +9,10 @@ class FrontController extends Controller
 {
     public function home()
     {
-        return view('home');
+        $tentang = \App\Tentang::all()->first();
+        return view('home', [
+            'tentang' => $tentang
+        ]);
     }
 
     public function daftar(Request $request)

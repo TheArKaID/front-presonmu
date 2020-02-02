@@ -28,6 +28,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/pendaftar', 'AdminController@pendaftar');
 
     Route::get('/dashboard/tentang', 'AdminController@tentang');
+    Route::post('/dashboard/tentang/simpan', 'AdminController@simpanTentang');
+
     Route::get('/dashboard/kegiatan', 'AdminController@kegiatan');
     Route::get('/dashboard/alur', 'AdminController@alur');
     Route::get('/dashboard/kesan', 'AdminController@kesan');

@@ -14,7 +14,8 @@
   <link href="{{asset('/front/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
 
   <!-- Custom fonts for this template -->
-  <link href="{{asset('/front/vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
+  {{-- <link href="{{asset('/front/vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css"> --}}
+  <link href="{{asset('/front/vendor/fontawesome-free/css/all.css')}}" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
   <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
@@ -85,26 +86,26 @@
         <div class="col-md-4">
           <span class="fa-stack fa-4x">
             <i class="fas fa-circle fa-stack-2x text-primary"></i>
-            <i class="fas fa-mosque fa-stack-1x fa-inverse"></i>
+            <i class="{{$tentang->icon1}} fa-stack-1x fa-inverse"></i>
           </span>
-          <h4 class="service-heading">Masjid</h4>
-          <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+          <h4 class="service-heading">{{$tentang->judul1}}</h4>
+          <p class="text-muted">{{$tentang->deskripsi1}}</p>
         </div>
         <div class="col-md-4">
           <span class="fa-stack fa-4x">
             <i class="fas fa-circle fa-stack-2x text-primary"></i>
-            <i class="fas fa-book-reader fa-stack-1x fa-inverse"></i>
+            <i class="{{$tentang->icon2}} fa-stack-1x fa-inverse"></i>
           </span>
-          <h4 class="service-heading">Membaca</h4>
-          <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+          <h4 class="service-heading">{{$tentang->judul2}}</h4>
+          <p class="text-muted">{{$tentang->deskripsi2}}</p>
         </div>
         <div class="col-md-4">
           <span class="fa-stack fa-4x">
             <i class="fas fa-circle fa-stack-2x text-primary"></i>
-            <i class="fas fa-praying-hands fa-stack-1x fa-inverse"></i>
+            <i class="{{$tentang->icon3}} fa-stack-1x fa-inverse"></i>
           </span>
-          <h4 class="service-heading">Berdoa</h4>
-          <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+          <h4 class="service-heading">{{$tentang->judul3}}</h4>
+          <p class="text-muted">{{$tentang->deskripsi3}}</p>
         </div>
       </div>
     </div>
@@ -214,16 +215,13 @@
       <div class="row">
         <div class="col-lg-12 text-center">
           <h2 class="section-heading text-uppercase">Alur Kegiatan</h2>
-          <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+          <h3 class="section-subheading text-muted">Berikut adalah waktu pendaftaran : </h3>
         </div>
       </div>
       <div class="row">
         <div class="col-lg-12">
           <ul class="timeline">
             <li>
-              <div class="timeline-image">
-                <img class="rounded-circle img-fluid" src="{{asset('/front/img/about/1.jpg')}}" alt="">
-              </div>
               <div class="timeline-panel">
                 <div class="timeline-heading">
                   <h4>2009-2011</h4>
@@ -235,9 +233,6 @@
               </div>
             </li>
             <li class="timeline-inverted">
-              <div class="timeline-image">
-                <img class="rounded-circle img-fluid" src="{{asset('/front/img/about/2.jpg')}}" alt="">
-              </div>
               <div class="timeline-panel">
                 <div class="timeline-heading">
                   <h4>March 2011</h4>
@@ -249,9 +244,6 @@
               </div>
             </li>
             <li>
-              <div class="timeline-image">
-                <img class="rounded-circle img-fluid" src="{{asset('/front/img/about/3.jpg')}}" alt="">
-              </div>
               <div class="timeline-panel">
                 <div class="timeline-heading">
                   <h4>December 2012</h4>
@@ -263,9 +255,7 @@
               </div>
             </li>
             <li class="timeline-inverted">
-              <div class="timeline-image">
-                <img class="rounded-circle img-fluid" src="{{asset('/front/img/about/4.jpg')}}" alt="">
-              </div>
+              
               <div class="timeline-panel">
                 <div class="timeline-heading">
                   <h4>July 2014</h4>
@@ -279,8 +269,8 @@
             <li class="timeline-inverted">
               <div class="timeline-image">
                 <h4>Selesai
-                  <br>Selesai!
-                  <br>SELESAI!</h4>
+                <br>Selesai!
+                <br>SELESAI!</h4>
               </div>
             </li>
           </ul>

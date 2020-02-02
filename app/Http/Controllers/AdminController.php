@@ -68,27 +68,29 @@ class AdminController extends Controller
         $tahun = \App\Tahun::pluck('ajaran', 'ajaran');
         // dd($tahunaktif);
         // dd($tahun);
-        return view('admin.settings.tahun', ['tahun' => $tahun, 'tahunaktif' => $this->tahunAktif()]);
+        return view('admin.pengaturan.tahun', ['tahun' => $tahun, 'tahunaktif' => $this->tahunAktif()]);
     }
 
     public function tentang()
     {
-        return view('admin.settings.tentang');
+        $tentang = \App\Tentang::all()->first();
+
+        return view('admin.pengaturan.tentang', ['tentang' => $tentang]);
     }
 
     public function kegiatan()
     {
-        return view('admin.settings.kegiatan');
+        return view('admin.pengaturan.kegiatan');
     }
 
     public function alur()
     {
-        return view('admin.settings.alur');
+        return view('admin.pengaturan.alur');
     }
 
     public function kesan()
     {
-        return view('admin.settings.kesan');
+        return view('admin.pengaturan.kesan');
     }
 
     public function tambahTahun(Request $request)
@@ -126,5 +128,14 @@ class AdminController extends Controller
         $pendaftar = \App\Pendaftar::where('tahun', $this->tahunAktif())->get();
         
         return view('admin.pendaftar', ['pendaftar' => $pendaftar]);
+    }
+
+    public function simpanTentang(Request $request)
+    {
+        $tentang = \App\Tentang::all()->first();
+        $tentang->update($request->all());
+        $tentang->save();
+
+        return redirect('/dashboard/tentang/')->with('sukses', 'Data Tentang telah diubah');
     }
 }

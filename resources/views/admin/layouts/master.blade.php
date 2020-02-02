@@ -151,6 +151,7 @@
     <!-- main JS
 		============================================ -->
     <script src="{{asset('/adminres/js/main.js')}}"></script>
+    @yield('footer')
 </body>
 
 </html>
