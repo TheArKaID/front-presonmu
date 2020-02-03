@@ -80,7 +80,8 @@ class AdminController extends Controller
 
     public function kegiatan()
     {
-        return view('admin.pengaturan.kegiatan');
+        $kegiatan = \App\Kegiatan::all();
+        return view('admin.pengaturan.kegiatan', ['kegiatan' => $kegiatan]);
     }
 
     public function alur()
@@ -137,5 +138,37 @@ class AdminController extends Controller
         $tentang->save();
 
         return redirect('/dashboard/tentang/')->with('sukses', 'Data Tentang telah diubah');
+    }
+
+    public function tambahKegiatan(Request $request)
+    {
+        $this->validate($request,[
+            'judul' => 'required',
+            'deskripsi' => 'required',
+            'images' => 'required',
+            'images.*' => 'required|mimes:jpeg,png,jpg|max:2048',
+        ]);
+        
+        $input=$request->all();
+        $images=array();
+        if($files=$request->file('images')){
+            if(sizeof($files)!=3){
+                return redirect('/dashboard/kegiatan')->withErrors(['Gagal'=>'Gambar harus berjumlah 3']);
+            }
+            foreach($files as $file){
+                $name=$file->getClientOriginalName();
+                $file->move('front/img/kegiatan',$name);
+                $images[]=$name;
+            }
+        }
+
+        \App\Kegiatan::insert( [
+            'judul' => $input['judul'],
+            'deskripsi' =>$input['deskripsi'],
+            'gambar'=>  implode("|",$images),
+        ]);
+
+        return redirect('/dashboard/kegiatan')->with('sukses', 'Kegiatan Berhasil Ditambah');
+ 
     }
 }

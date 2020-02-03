@@ -62,7 +62,6 @@
     <!-- modernizr JS
 		============================================ -->
     <script src="{{asset('/adminres/js/vendor/modernizr-2.8.3.min.js')}}"></script>
-    
     @yield('header')
 </head>
 
@@ -88,6 +87,21 @@
         {{-- Header --}}
         @include('admin.layouts._header')
         {{-- Content --}}
+        @if (session('sukses'))
+          <div class="alert alert-success" role="alert">
+              <strong>Berhasil!</strong> {{session('sukses')}}
+          </div>
+        @endif
+        @if ($errors->any())
+        <div class="alert alert-danger alert-mg-b">
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">×</span>
+          </button>
+          @foreach ($errors->all() as $error)
+              <strong>Gagal!</strong> {{str_replace(['tahunmulai', 'tahunselesai', 'ajaran'], ['Tahun Mulai', 'Tahun Selesai', 'Tahun Ajaran'], $error)}} <br>
+          @endforeach
+        </div>
+        @endif
         @yield('content')
         {{-- Footer  --}}
         @include('admin.layouts._footer')

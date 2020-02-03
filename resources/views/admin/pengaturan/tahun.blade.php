@@ -9,21 +9,6 @@
 <div class="analytics-sparkle-area">
     <div class="container-fluid">
         <div class="row">
-            @if (session('sukses'))
-                <div class="alert alert-success" role="alert">
-                    <strong>Berhasil!</strong> {{session('sukses')}}
-                </div>
-            @endif
-            @if ($errors->any())
-            <div class="alert alert-danger alert-mg-b">
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">×</span>
-                </button>
-                @foreach ($errors->all() as $error)
-                    <strong>Gagal!</strong> {{str_replace(['tahunmulai', 'tahunselesai', 'ajaran'], ['Tahun Mulai', 'Tahun Selesai', 'Tahun Ajaran'], $error)}} <br>
-                @endforeach
-            </div>
-            @endif
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="sparkline10-list mt-b-30">
                     <div class="sparkline10-hd">
