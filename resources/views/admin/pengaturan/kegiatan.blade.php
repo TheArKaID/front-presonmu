@@ -3,7 +3,9 @@
 @section('header')
     <link rel="stylesheet" href="{{asset('/adminres/css/modals.css')}}">
 @endsection
-
+@section('title')
+    Kegiatan | Presonmu
+@endsection
 @section('content')
 <div class="analytics-sparkle-area">
     <div class="container-fluid">
@@ -89,7 +91,6 @@
                 {{-- CAROUSEL --}}
                 {{-- ====== --}}
                 <div id="myCarousel" class="carousel slide carousel-fit" data-ride="carousel" data-interval="60000" style="margin-top: 0px; height: 400px;">
-	
                 <!-- Indicators -->
                 <ol class="carousel-indicators">
                     <li data-target="#myCarousel" data-slide-to="0" class=""></li>
@@ -125,7 +126,7 @@
             </div>
                 {{-- ===== --}}
                 {{-- END CAROUSEL --}}
-                
+
             </div>
             <div class="modal-footer">
                 <a data-dismiss="modal" href="#">Tutup</a>
