@@ -152,64 +152,61 @@
       <div class="row">
         <div class="col-lg-12 text-center">
           <h2 class="section-heading text-uppercase">Alur Kegiatan</h2>
-          <h3 class="section-subheading text-muted">Berikut adalah waktu pendaftaran : </h3>
+          <h3 class="section-subheading text-muted">Berikut adalah Alur Kegiatan Mubaligh Hijrah : </h3>
         </div>
       </div>
       <div class="row">
         <div class="col-lg-12">
           <ul class="timeline">
-            <li>
-              <div class="timeline-panel">
-                <div class="timeline-heading">
-                  <h4>2009-2011</h4>
-                  <h4 class="subheading">Pendaftaran</h4>
+            @php
+                $posalur = 0;
+            @endphp
+
+            @foreach ($alur as $a)
+              @if ($posalur==($alur->count()-1))
+                <li class="timeline-inverted">
+                  <div class="timeline-image">
+                    <h4>{{$a->judul}}</h4>
+                  </div>
+                  
+                </li>
+                <div class="timeline-body" style="text-align: center">
+                  <p>{{$a->tanggal}}</p>
+                  <p class="text-muted">{{$a->deskripsi}}</p>
                 </div>
-                <div class="timeline-body">
-                  <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
-                </div>
-              </div>
-            </li>
-            <li class="timeline-inverted">
-              <div class="timeline-panel">
-                <div class="timeline-heading">
-                  <h4>March 2011</h4>
-                  <h4 class="subheading">Pembukaan dan Pelepasan</h4>
-                </div>
-                <div class="timeline-body">
-                  <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
-                </div>
-              </div>
-            </li>
-            <li>
-              <div class="timeline-panel">
-                <div class="timeline-heading">
-                  <h4>December 2012</h4>
-                  <h4 class="subheading">Kegiatan</h4>
-                </div>
-                <div class="timeline-body">
-                  <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
-                </div>
-              </div>
-            </li>
-            <li class="timeline-inverted">
+              @else
+                @if (($posalur%2)==0)
+                  <li>
+                    <div class="timeline-panel">
+                      <div class="timeline-heading">
+                        <h4>{{$a->judul}}</h4>
+                        <h4 class="subheading">{{$a->tanggal}}</h4>
+                      </div>
+                      <div class="timeline-body">
+                        <p class="text-muted">{{$a->deskripsi}}</p>
+                      </div>
+                    </div>
+                  </li>
+                @else
+                  <li class="timeline-inverted">
+                    <div class="timeline-panel">
+                      <div class="timeline-heading">
+                        <h4>{{$a->judul}}</h4>
+                        <h4 class="subheading">{{$a->tanggal}}</h4>
+                      </div>
+                      <div class="timeline-body">
+                        <p class="text-muted">{{$a->deskripsi}}</p>
+                      </div>
+                    </div>
+                  </li>
+                @endif
+              @endif
               
-              <div class="timeline-panel">
-                <div class="timeline-heading">
-                  <h4>July 2014</h4>
-                  <h4 class="subheading">Penutupan dan Pengembalian</h4>
-                </div>
-                <div class="timeline-body">
-                  <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
-                </div>
-              </div>
-            </li>
-            <li class="timeline-inverted">
-              <div class="timeline-image">
-                <h4>Selesai
-                <br>Selesai!
-                <br>SELESAI!</h4>
-              </div>
-            </li>
+              @php
+                $posalur++;
+              @endphp
+            @endforeach
+            
           </ul>
         </div>
       </div>
