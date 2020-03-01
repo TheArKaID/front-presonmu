@@ -7,11 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * @property integer $id
  * @property string $judul
+ * @property string $tanggal
  * @property string $deskripsi
  * @property string $created_at
  * @property string $updated_at
  */
-class alur extends Model
+class Alur extends Model
 {
     /**
      * The table associated with the model.
@@ -30,6 +31,6 @@ class alur extends Model
     /**
      * @var array
      */
-    protected $fillable = ['judul', 'deskripsi', 'created_at', 'updated_at'];
+    protected $fillable = ['judul', 'tanggal', 'deskripsi', 'created_at', 'updated_at'];
 
 }
