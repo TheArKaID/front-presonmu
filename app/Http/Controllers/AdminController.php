@@ -86,7 +86,8 @@ class AdminController extends Controller
 
     public function alur()
     {
-        return view('admin.pengaturan.alur');
+        $alur = \App\Alur::all();
+        return view('admin.pengaturan.alur', ['alur' => $alur]);
     }
 
     public function kesan()
@@ -170,5 +171,50 @@ class AdminController extends Controller
 
         return redirect('/dashboard/kegiatan')->with('sukses', 'Kegiatan Berhasil Ditambah');
  
+    }
+
+    public function tambahAlur(Request $request)
+    {
+        $this->validate($request,[
+            'judul' => 'required',
+            'tanggal' => 'required',
+            'deskripsi' => 'required',
+        ]);
+        
+        $input=$request->all();
+
+        \App\Alur::insert( [
+            'judul' => $input['judul'],
+            'tanggal' =>$input['tanggal'],
+            'deskripsi' =>$input['deskripsi']
+        ]);
+
+        return redirect('/dashboard/alur')->with('sukses', 'Alur Berhasil Ditambah');
+ 
+    }
+
+    public function simpanAlur(Request $request)
+    {
+        $this->validate($request,[
+            'judul' => 'required',
+            'tanggal' => 'required',
+            'deskripsi' => 'required',
+        ]);
+        
+        $input=$request->all();
+
+        $alur = \App\Alur::find($input['id']);
+        $alur->update($input);
+
+        return redirect('/dashboard/alur')->with('sukses', 'Alur Berhasil Diubah'); 
+    }
+
+    public function hapusAlur(Request $request)
+    {
+        $input = $request->all();
+        $alur = \App\Alur::find($input['id']);
+        $alur->delete();
+
+        return redirect('/dashboard/alur')->with('sukses', 'Alur Berhasil Dihapus'); 
     }
 }

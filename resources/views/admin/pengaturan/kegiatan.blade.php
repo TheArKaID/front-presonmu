@@ -134,6 +134,27 @@
         </div>
     </div>
 </div>
+
+<div id="PrimaryModalhdbgcl" class="modal modal-edu-general default-popup-PrimaryModal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header header-color-modal bg-color-1">
+                <h4 class="modal-title">Alasan Pendaftar</h4>
+                <div class="modal-close-area modal-close-df">
+                    <a class="close" data-dismiss="modal" href="#"><i class="fa fa-close"></i></a>
+                </div>
+            </div>
+            <div class="modal-body">
+                {{-- <i class="educate-icon educate-checked modal-check-pro"></i>
+                <h2></h2> --}}
+                <p id="pMessage">The Modal plugin is a dialog box/popup window that is displayed on top of the current page</p>
+            </div>
+            <div class="modal-footer">
+                <a data-dismiss="modal" href="#">Tutup</a>
+            </div>
+        </div>
+    </div>
+</div>
 @endsection
 
 @section('footer')
