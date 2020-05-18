@@ -21,27 +21,27 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/dashboard','AdminController@dashboard'); 
 
     // Setting
-    Route::get('/dashboard/tahun', 'AdminController@tahun');
-    Route::post('/dashboard/tahun/tambah', 'AdminController@tambahTahun');
-    Route::post('/dashboard/tahun/simpan', 'AdminController@simpanTahun');
-
     Route::get('/dashboard/pendaftar', 'AdminController@pendaftar');
 
-    Route::get('/dashboard/tentang', 'AdminController@tentang');
-    Route::post('/dashboard/tentang/simpan', 'AdminController@simpanTentang');
+    Route::get('/dashboard/setting/tahun', 'AdminController@tahun');
+    Route::post('/dashboard/setting/tahun/tambah', 'AdminController@tambahTahun');
+    Route::post('/dashboard/setting/tahun/simpan', 'AdminController@simpanTahun');
 
-    Route::get('/dashboard/kegiatan', 'AdminController@kegiatan');
-    Route::post('/dashboard/kegiatan/tambah', 'AdminController@tambahKegiatan');
-    Route::post('/dashboard/kegiatan/hapus', 'AdminController@hapusKegiatan');
+    Route::get('/dashboard/setting/tentang', 'AdminController@tentang');
+    Route::post('/dashboard/setting/tentang/simpan', 'AdminController@simpanTentang');
 
-    Route::get('/dashboard/alur', 'AdminController@alur');
-    Route::post('/dashboard/alur/tambah', 'AdminController@tambahAlur');
-    Route::post('/dashboard/alur/simpan', 'AdminController@simpanAlur');
-    Route::post('/dashboard/alur/hapus', 'AdminController@hapusAlur');
+    Route::get('/dashboard/setting/kegiatan', 'AdminController@kegiatan');
+    Route::post('/dashboard/setting/kegiatan/tambah', 'AdminController@tambahKegiatan');
+    Route::post('/dashboard/setting/kegiatan/hapus', 'AdminController@hapusKegiatan');
 
-    Route::get('/dashboard/kesan', 'AdminController@kesan');
-    Route::post('/dashboard/kesan/tambah', 'AdminController@tambahKesan');
-    Route::post('/dashboard/kesan/hapus', 'AdminController@hapusKesan');
+    Route::get('/dashboard/setting/alur', 'AdminController@alur');
+    Route::post('/dashboard/setting/alur/tambah', 'AdminController@tambahAlur');
+    Route::post('/dashboard/setting/alur/simpan', 'AdminController@simpanAlur');
+    Route::post('/dashboard/setting/alur/hapus', 'AdminController@hapusAlur');
+
+    Route::get('/dashboard/setting/kesan', 'AdminController@kesan');
+    Route::post('/dashboard/setting/kesan/tambah', 'AdminController@tambahKesan');
+    Route::post('/dashboard/setting/kesan/hapus', 'AdminController@hapusKesan');
 
     Route::get('/logout','AdminController@logout'); 
 });
