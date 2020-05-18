@@ -92,7 +92,8 @@ class AdminController extends Controller
 
     public function kesan()
     {
-        return view('admin.pengaturan.kesan');
+        $kesan = \App\Kesan::all();
+        return view('admin.pengaturan.kesan', ['kesan' => $kesan]);
     }
 
     public function tambahTahun(Request $request)
@@ -216,5 +217,41 @@ class AdminController extends Controller
         $alur->delete();
 
         return redirect('/dashboard/alur')->with('sukses', 'Alur Berhasil Dihapus'); 
+    }
+
+    public function tambahKesan(Request $request)
+    {
+        $this->validate($request,[
+            'nama' => 'required',
+            'status' => 'required',
+            'kesan' => 'required',
+            'gambar' => 'required'
+        ]);
+        
+        $input=$request->all();
+        $gambar="";
+        if($file=$request->file('gambar')){
+                $name=$file->getClientOriginalName();
+                $file->move('front/img/kesan',$name);
+                $gambar=$name;
+        }
+
+        \App\Kesan::insert( [
+            'nama' => $input['nama'],
+            'status' =>$input['status'],
+            'kesan' =>$input['kesan'],
+            'gambar'=>  $gambar
+        ]);
+
+        return redirect('/dashboard/kesan')->with('sukses', 'Kesan Berhasil Ditambah');
+    }
+
+    public function hapusKesan(Request $request)
+    {
+        $input = $request->all();
+        $Kesan = \App\Kesan::find($input['id']);
+        $Kesan->delete();
+
+        return redirect('/dashboard/kesan')->with('sukses', 'Kesan Berhasil Dihapus'); 
     }
 }

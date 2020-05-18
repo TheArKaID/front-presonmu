@@ -12,11 +12,13 @@ class FrontController extends Controller
         $tentang = \App\Tentang::all()->first();
         $kegiatan = \App\Kegiatan::all();
         $alur = \App\Alur::all();
+        $kesan = \App\Kesan::all();
 
         return view('home', [
             'tentang' => $tentang,
             'kegiatan' => $kegiatan,
-            'alur' => $alur
+            'alur' => $alur,
+            'kesan' => $kesan
         ]);
     }
 

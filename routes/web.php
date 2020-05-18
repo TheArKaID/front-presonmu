@@ -39,6 +39,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/dashboard/alur/hapus', 'AdminController@hapusAlur');
 
     Route::get('/dashboard/kesan', 'AdminController@kesan');
+    Route::post('/dashboard/kesan/tambah', 'AdminController@tambahKesan');
+    Route::post('/dashboard/kesan/hapus', 'AdminController@hapusKesan');
 
     Route::get('/logout','AdminController@logout'); 
 });

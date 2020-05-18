@@ -219,93 +219,34 @@
       <div class="row">
         <div class="col-lg-12 text-center">
           <h2 class="section-heading text-uppercase">Pesan Kesan Peserta MH</h2>
-          <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+          <h3 class="section-subheading text-muted">Apa kata mereka tentang Mubaligh Hijrah ?</h3>
         </div>
       </div>
       <div class="row">
-        <div class="col-sm-4">
-          <div class="team-member">
-            <img class="mx-auto rounded-circle" src="{{asset('/front/img/team/1.jpg')}}" alt="">
-            <h4>Mas Agung</h4>
-            <p class="text-muted">Lead Designer</p>
-            <ul class="list-inline social-buttons">
-              <li class="list-inline-item">
-                <a href="#">
-                  <i class="fab fa-twitter"></i>
-                </a>
-              </li>
-              <li class="list-inline-item">
-                <a href="#">
-                  <i class="fab fa-facebook-f"></i>
-                </a>
-              </li>
-              <li class="list-inline-item">
-                <a href="#">
-                  <i class="fab fa-linkedin-in"></i>
-                </a>
-              </li>
-            </ul>
+        @foreach ($kesan as $ke)
+          <div class="col-sm-4">
+            <div class="team-member">
+              <img class="mx-auto rounded-circle" src="{{asset('/front/img/kesan')}}/{{$ke->gambar}}" alt="">
+              <h3><span>{{$ke->nama}}</span></h3>
+              <p class="all-pro-ad">{{$ke->status}}</p>
+              <p>
+                {{$ke->kesan}}
+              </p>
+            </div>
           </div>
-        </div>
-        <div class="col-sm-4">
-          <div class="team-member">
-            <img class="mx-auto rounded-circle" src="{{asset('/front/img/team/2.jpg')}}" alt="">
-            <h4>Mas Masadi</h4>
-            <p class="text-muted">Lead Marketer</p>
-            <ul class="list-inline social-buttons">
-              <li class="list-inline-item">
-                <a href="#">
-                  <i class="fab fa-twitter"></i>
-                </a>
-              </li>
-              <li class="list-inline-item">
-                <a href="#">
-                  <i class="fab fa-facebook-f"></i>
-                </a>
-              </li>
-              <li class="list-inline-item">
-                <a href="#">
-                  <i class="fab fa-linkedin-in"></i>
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-sm-4">
-          <div class="team-member">
-            <img class="mx-auto rounded-circle" src="{{asset('/front/img/team/3.jpg')}}" alt="">
-            <h4>Mas Rinaldi</h4>
-            <p class="text-muted">Lead Developer</p>
-            <ul class="list-inline social-buttons">
-              <li class="list-inline-item">
-                <a href="#">
-                  <i class="fab fa-twitter"></i>
-                </a>
-              </li>
-              <li class="list-inline-item">
-                <a href="#">
-                  <i class="fab fa-facebook-f"></i>
-                </a>
-              </li>
-              <li class="list-inline-item">
-                <a href="#">
-                  <i class="fab fa-linkedin-in"></i>
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
+        @endforeach
       </div>
+      
       <div class="row">
         <div class="col-lg-8 mx-auto text-center">
-          <p class="large text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.</p>
+          <p class="large text-muted">Dan masih banyak lagi, Pesan dan Kesan menarik dalam Program Mubaligh Hijrah</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Clients -->
-  <section class="py-5">
+  {{-- <section class="py-5">
     <div class="container">
       <div class="row">
         <div class="col-md-3 col-sm-6">
@@ -330,7 +271,7 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> --}}
 
   <!-- Contact -->
   <section class="page-section" id="contact">
@@ -338,7 +279,7 @@
       <div class="row">
         <div class="col-lg-12 text-center">
           <h2 class="section-heading text-uppercase">Daftar Sekarang!</h2>
-          <h3 class="section-subheading text-muted">Kuota Terbatas</h3>
+          <h3 class="section-subheading" style="color:bisque">Kuota Terbatas</h3>
         </div>
       </div>
       <div class="row">
@@ -367,7 +308,7 @@
             <div class="clearfix"></div>
               <div class="col-lg-12 text-center">
                 <div id="success"></div>
-                {!! Form::submit('Daftar', ['class' => 'btn btn-primary btn-xl text-uppercase', 'id' => 'senMessageButton']) !!}
+                {!! Form::submit('Daftar', ['class' => 'btn btn-primary btn-xl text-uppercase', 'id' => 'senMessageButton', 'style' => 'color: black']) !!}
               </div>
           </div>
           {!! Form::close() !!}
