@@ -19,13 +19,13 @@
                     </div>
                     <div class="sparkline12-graph">
                         <div>
-                            <div class="static-table-list">
+                            <div class="table-responsive">
                                 <table class="table table-hover">
                                     <thead>
                                         <tr>
                                             <th>No</th>
                                             <th>Judul</th>
-                                            <th style="word-wrap: break-word; max-width: 200px;">Deskripsi</th>
+                                            <th>Deskripsi</th>
                                             <th>Gambar</th>
                                             <th>Aksi</th>
                                         </tr>
@@ -38,7 +38,7 @@
                                         <tr>
                                             <td>{{$no}}</td>
                                             <td>{{$k->judul}}</td>
-                                            <td style="word-wrap: break-word; max-width: 200px;">{{$k->deskripsi}}</td>
+                                            <td>{{$k->deskripsi}}</td>
                                             <td><a class="btn btn-warning" style="border-radius: 3px" href="#" data-toggle="modal" data-target="#ModalLihatGambar" onclick="showGambar('{{$k->gambar}}', '{{$k->judul}}')">Lihat</a></td>
                                             <td><a class="btn btn-danger" style="border-radius: 3px" href="#" data-toggle="modal" data-target="#PrimaryModalhdbgcl" onclick="hapus('{{$k->id}}', '{{$k->judul}}')">Hapus</a></td>
                                         </tr>
