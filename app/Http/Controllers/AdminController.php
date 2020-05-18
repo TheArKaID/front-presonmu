@@ -6,6 +6,8 @@ use Carbon\Carbon;
 use Carbon\CarbonPeriod;
 use Auth;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+use App\Kegiatan;
 
 class AdminController extends Controller
 {
@@ -153,22 +155,32 @@ class AdminController extends Controller
         
         $input=$request->all();
         $images=array();
-        if($files=$request->file('images')){
-            if(sizeof($files)!=3){
-                return redirect('/dashboard/kegiatan')->withErrors(['Gagal'=>'Gambar harus berjumlah 3']);
-            }
-            foreach($files as $file){
-                $name=$file->getClientOriginalName();
-                $file->move('front/img/kegiatan',$name);
-                $images[]=$name;
-            }
+        
+        if(!$request->hasFile('images')){
+            return redirect('/dashboard/kegiatan')->withErrors(['Gagal'=>'Harap Masukkan Gambar']);
         }
 
-        \App\Kegiatan::insert( [
-            'judul' => $input['judul'],
-            'deskripsi' =>$input['deskripsi'],
-            'gambar'=>  implode("|",$images),
-        ]);
+        $files=$request->file('images');
+        if(sizeof($files)!=3){
+            return redirect('/dashboard/kegiatan')->withErrors(['Gagal'=>'Gambar harus berjumlah 3']);
+        }
+        
+        $kegiatan = new Kegiatan;
+        $kegiatan->judul = $input['judul'];
+        $kegiatan->deskripsi = $input['deskripsi'];
+        $kegiatan->gambar = "";
+        $kegiatan->save();
+        $no = 1;
+
+        foreach($files as $file){
+            $ext = $file->getClientOriginalExtension();
+            $name = 'K'. $kegiatan->id .'-'. $no++ .'.'. $ext;
+            $file->storeAs('public/kegiatan', $name);
+            $images[]=$name;
+        }
+
+        $kegiatan->gambar = implode("|",$images);
+        $kegiatan->save();
 
         return redirect('/dashboard/kegiatan')->with('sukses', 'Kegiatan Berhasil Ditambah');
  
