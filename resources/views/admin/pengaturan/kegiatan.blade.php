@@ -161,7 +161,6 @@
 <script>
     function showGambar(Image, title) {
         var t = document.getElementById('ModalTitleGambar');
-        // var p = document.getElementById('pImage');
         var img1 = document.getElementById('imgCarousel1');
         var img2 = document.getElementById('imgCarousel2');
         var img3 = document.getElementById('imgCarousel3');
@@ -171,13 +170,11 @@
         var srcimg2 = srcimg[1];
         var srcimg3 = srcimg[2];
 
-        img1.src = "{{asset('/front/img/kegiatan')}}/"+srcimg1;
-        img2.src = "{{asset('/front/img/kegiatan')}}/"+srcimg2;
-        img3.src = "{{asset('/front/img/kegiatan')}}/"+srcimg3;
+        img1.src = "{{asset('storage/kegiatan/')}}/"+srcimg1;
+        img2.src = "{{asset('storage/kegiatan/')}}/"+srcimg2;
+        img3.src = "{{asset('storage/kegiatan/')}}/"+srcimg3;
 
         t.innerHTML = 'Gambar untuk '+title;
-        // p.innerHTML = Image;
-        
     }
 </script>
 @endsection
