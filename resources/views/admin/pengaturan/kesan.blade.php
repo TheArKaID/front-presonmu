@@ -150,7 +150,7 @@
         var t = document.getElementById('ModalTitleGambar');
         var img1 = document.getElementById('imgCarousel1');
 
-        img1.src = "{{asset('/front/img/kesan')}}/"+Image;
+        img1.src = "{{asset('storage/kesan')}}/"+Image;
 
         t.innerHTML = 'Foto '+title;
     }
