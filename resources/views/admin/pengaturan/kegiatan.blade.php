@@ -62,7 +62,7 @@
                     </div>
                     <div class="sparkline12-graph">
                         <div class="panel-body">
-                                {!! Form::open(['url' => '/dashboard/kegiatan/tambah', 'class' => 'uploader', 'accept-charset' => 'utf-8', 'enctype' => 'multipart/form-data']) !!}
+                                {!! Form::open(['url' => '/dashboard/setting/kegiatan/tambah', 'class' => 'uploader', 'accept-charset' => 'utf-8', 'enctype' => 'multipart/form-data']) !!}
                                 {!! Form::text('judul', '', ['class' => 'form-control', 'placeholder' => 'Judul']) !!}
                                 {!! Form::textarea('deskripsi', '', ['class' => 'form-control', 'placeholder' => 'Deskripsi']) !!}
                                 <div class="row" style="float: right"><p style="margin-right: 10px;font-size: 14px;color:#999;font-weight: 300;">*Anda harus memasukkan 3 Gambar</p></div>
@@ -152,7 +152,7 @@
             </div>
             <div class="modal-footer">
                 {{-- <a data-dismiss="modal" href="#">Tutup</a> --}}
-                {!! Form::open(['url' => '/dashboard/kegiatan/hapus', 'style' => 'float: right']) !!}
+                {!! Form::open(['url' => '/dashboard/setting/kegiatan/hapus', 'style' => 'float: right']) !!}
                 {!! Form::hidden('id', '', ['id' => 'hapusid']) !!}
                 {{-- <a href="#" data-dismiss="modal" class="btn btn-primary">Tutup</a> --}}
                 {!! Form::submit('Hapus', ['class' => 'btn btn-danger']) !!}

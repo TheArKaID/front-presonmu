@@ -636,11 +636,11 @@
                                 <li><a href="/dashboard/pendaftar">Pendaftar</a></li>
                                 <li><a data-toggle="collapse" data-target="#Charts" href="#">Pengaturan <span class="admin-project-icon edu-icon edu-down-arrow"></span></a>
                                     <ul class="collapse dropdown-header-top">
-                                        <li><a title="Tahun" href="/dashboard/tahun">Tahun</a></li>
-                                        <li><a title="Tentang" href="/dashboard/tentang">Tentang</a></li>
-                                        <li><a title="Kegiatan" href="/dashboard/kegiatan">Kegiatan</a></li>
-                                        <li><a title="Alur" href="/dashboard/alur">Alur</a></li>
-                                        <li><a title="Kesan" href="/dashboard/kesan">Kesan</a></li>
+                                        <li><a title="Tahun" href="/dashboard/setting/tahun">Tahun</a></li>
+                                        <li><a title="Tentang" href="/dashboard/setting/tentang">Tentang</a></li>
+                                        <li><a title="Kegiatan" href="/dashboard/setting/kegiatan">Kegiatan</a></li>
+                                        <li><a title="Alur" href="/dashboard/setting/alur">Alur</a></li>
+                                        <li><a title="Kesan" href="/dashboard/setting/kesan">Kesan</a></li>
                                     </ul>
                                 </li>
                             </ul>

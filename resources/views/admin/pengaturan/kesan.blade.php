@@ -63,7 +63,7 @@
                     </div>
                     <div class="sparkline12-graph">
                         <div class="panel-body">
-                                {!! Form::open(['url' => '/dashboard/kesan/tambah', 'class' => 'uploader', 'accept-charset' => 'utf-8', 'enctype' => 'multipart/form-data']) !!}
+                                {!! Form::open(['url' => '/dashboard/setting/kesan/tambah', 'class' => 'uploader', 'accept-charset' => 'utf-8', 'enctype' => 'multipart/form-data']) !!}
                                 {!! Form::text('nama', '', ['class' => 'form-control', 'placeholder' => 'Nama']) !!}
                                 {!! Form::text('status', '', ['class' => 'form-control', 'placeholder' => 'Status']) !!}
                                 {!! Form::textarea('kesan', '', ['class' => 'form-control', 'placeholder' => 'Kesan']) !!}
@@ -133,7 +133,7 @@
             </div>
             <div class="modal-footer">
                 {{-- <a data-dismiss="modal" href="#">Tutup</a> --}}
-                {!! Form::open(['url' => '/dashboard/kesan/hapus', 'style' => 'float: right']) !!}
+                {!! Form::open(['url' => '/dashboard/setting/kesan/hapus', 'style' => 'float: right']) !!}
                 {!! Form::hidden('id', '', ['id' => 'hapusid']) !!}
                 {{-- <a href="#" data-dismiss="modal" class="btn btn-primary">Tutup</a> --}}
                 {!! Form::submit('Hapus', ['class' => 'btn btn-danger']) !!}

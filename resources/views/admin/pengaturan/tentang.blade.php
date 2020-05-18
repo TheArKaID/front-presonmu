@@ -22,7 +22,7 @@
                     </div>
                     <div class="sparkline12-graph">
                         <div class="panel-body">
-                            {!! Form::open(['url' => '/dashboard/tentang/simpan']) !!}
+                            {!! Form::open(['url' => '/dashboard/setting/tentang/simpan']) !!}
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="form-group">

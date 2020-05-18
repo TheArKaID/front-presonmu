@@ -12,6 +12,27 @@ use App\Kesan;
 
 class AdminController extends Controller
 {
+    public function dashboard()
+    {
+        $start1 = Carbon::create(Carbon::now('America/Detroit')->format('Y-m-d').' 15:00:00');
+        $end1 = Carbon::create(Carbon::now('America/Detroit')->format('Y-m-d').' 17:59:59');
+        $start2 = Carbon::create(Carbon::now('America/Detroit')->format('Y-m-d').' 18:00:00');
+        $end2 = Carbon::create(Carbon::now('America/Detroit')->format('Y-m-d').' 21:00:00');
+
+        $tahunajaran = $this->tahunAktif();
+        $pendaftar = \App\Pendaftar::where('tahun', $tahunajaran);
+        $peserta = \App\User::where('tahun', $tahunajaran);
+        $presensi1 = \App\Riwayat::whereBetween('created_at', [$start1, $end1])->get();
+        $presensi2 = \App\Riwayat::whereBetween('created_at', [$start2, $end2])->get();
+        // dd(Carbon::now('Asia/Jakarta'));
+        return view('admin.dashboard', [
+            'pendaftar' => $pendaftar,
+            'peserta' => $peserta,
+            'sesi1' => $presensi1,
+            'sesi2' => $presensi2
+        ]);
+    }
+
     function tahunAktif()
     {
         return \App\Informasi::all()->first()->tahun_aktif;    
@@ -37,27 +58,6 @@ class AdminController extends Controller
             return redirect('/dashboard');
         }
         return redirect('/admin');
-    }
-
-    public function dashboard()
-    {
-        $start1 = Carbon::create(Carbon::now('America/Detroit')->format('Y-m-d').' 15:00:00');
-        $end1 = Carbon::create(Carbon::now('America/Detroit')->format('Y-m-d').' 17:59:59');
-        $start2 = Carbon::create(Carbon::now('America/Detroit')->format('Y-m-d').' 18:00:00');
-        $end2 = Carbon::create(Carbon::now('America/Detroit')->format('Y-m-d').' 21:00:00');
-
-        $tahunajaran = $this->tahunAktif();
-        $pendaftar = \App\Pendaftar::where('tahun', $tahunajaran);
-        $peserta = \App\User::where('tahun', $tahunajaran);
-        $presensi1 = \App\Riwayat::whereBetween('created_at', [$start1, $end1])->get();
-        $presensi2 = \App\Riwayat::whereBetween('created_at', [$start2, $end2])->get();
-        // dd(Carbon::now('Asia/Jakarta'));
-        return view('admin.dashboard', [
-            'pendaftar' => $pendaftar,
-            'peserta' => $peserta,
-            'sesi1' => $presensi1,
-            'sesi2' => $presensi2
-        ]);
     }
 
     public function logout()
@@ -110,14 +110,14 @@ class AdminController extends Controller
         ]);
 
         if(($request->tahunselesai-$request->tahunmulai)!=1){
-            return redirect('/dashboard/tahun')->withErrors(['tahunbeda'=>'The different should be 1 year'])->with(['tahunmulai' => $request->tahunmulai, 'tahunselesai' => $request->tahunselesai]);
+            return redirect('/dashboard/setting/tahun')->withErrors(['tahunbeda'=>'The different should be 1 year'])->with(['tahunmulai' => $request->tahunmulai, 'tahunselesai' => $request->tahunselesai]);
         }
 
         $ajaran = new \App\Tahun;
         $ajaran->ajaran = $request->tahunmulai .'/'. $request->tahunselesai;
         $ajaran->save();
 
-        return redirect('/dashboard/tahun')->with('sukses', 'Tahun Ajaran Berhasil Ditambahkan');
+        return redirect('/dashboard/setting/tahun')->with('sukses', 'Tahun Ajaran Berhasil Ditambahkan');
     }
 
     public function simpanTahun(Request $request)
@@ -126,7 +126,7 @@ class AdminController extends Controller
         $informasi->tahun_aktif = $request->tahun;
         $informasi->save();
         // dd($informasi->tahun_aktif);
-        return redirect('/dashboard/tahun')->with('sukses', 'Tahun Aktif Telah Diubah');
+        return redirect('/dashboard/setting/tahun')->with('sukses', 'Tahun Aktif Telah Diubah');
     }
 
     public function pendaftar()
@@ -142,7 +142,7 @@ class AdminController extends Controller
         $tentang->update($request->all());
         $tentang->save();
 
-        return redirect('/dashboard/tentang/')->with('sukses', 'Data Tentang telah diubah');
+        return redirect('/dashboard/setting/tentang')->with('sukses', 'Data Tentang telah diubah');
     }
 
     public function tambahKegiatan(Request $request)
@@ -158,12 +158,12 @@ class AdminController extends Controller
         $images=array();
         
         if(!$request->hasFile('images')){
-            return redirect('/dashboard/kegiatan')->withErrors(['Gagal'=>'Harap Masukkan Gambar']);
+            return redirect('/dashboard/setting/kegiatan')->withErrors(['Gagal'=>'Harap Masukkan Gambar']);
         }
 
         $files=$request->file('images');
         if(sizeof($files)!=3){
-            return redirect('/dashboard/kegiatan')->withErrors(['Gagal'=>'Gambar harus berjumlah 3']);
+            return redirect('/dashboard/setting/kegiatan')->withErrors(['Gagal'=>'Gambar harus berjumlah 3']);
         }
         
         $kegiatan = new Kegiatan;
@@ -183,7 +183,7 @@ class AdminController extends Controller
         $kegiatan->gambar = implode("|",$images);
         $kegiatan->save();
 
-        return redirect('/dashboard/kegiatan')->with('sukses', 'Kegiatan Berhasil Ditambah');
+        return redirect('/dashboard/setting/kegiatan')->with('sukses', 'Kegiatan Berhasil Ditambah');
  
     }
 
@@ -197,7 +197,7 @@ class AdminController extends Controller
 
         $kegiatan->delete();
 
-        return redirect('/dashboard/kegiatan')->with('sukses', 'Kegiatan Berhasil Dihapus'); 
+        return redirect('/dashboard/setting/kegiatan')->with('sukses', 'Kegiatan Berhasil Dihapus'); 
     }
 
     public function tambahAlur(Request $request)
@@ -216,7 +216,7 @@ class AdminController extends Controller
             'deskripsi' =>$input['deskripsi']
         ]);
 
-        return redirect('/dashboard/alur')->with('sukses', 'Alur Berhasil Ditambah');
+        return redirect('/dashboard/setting/alur')->with('sukses', 'Alur Berhasil Ditambah');
  
     }
 
@@ -233,7 +233,7 @@ class AdminController extends Controller
         $alur = \App\Alur::find($input['id']);
         $alur->update($input);
 
-        return redirect('/dashboard/alur')->with('sukses', 'Alur Berhasil Diubah'); 
+        return redirect('/dashboard/setting/alur')->with('sukses', 'Alur Berhasil Diubah'); 
     }
 
     public function hapusAlur(Request $request)
@@ -242,7 +242,7 @@ class AdminController extends Controller
         $alur = \App\Alur::find($input['id']);
         $alur->delete();
 
-        return redirect('/dashboard/alur')->with('sukses', 'Alur Berhasil Dihapus'); 
+        return redirect('/dashboard/setting/alur')->with('sukses', 'Alur Berhasil Dihapus'); 
     }
 
     public function tambahKesan(Request $request)
@@ -273,9 +273,9 @@ class AdminController extends Controller
         //Update data kesan dengan nama gambar
         $kesan->gambar = $gambar;
         $kesan->save();
-        
+
         // Alihkan dengan sukses
-        return redirect('/dashboard/kesan')->with('sukses', 'Kesan Berhasil Ditambah');
+        return redirect('/dashboard/setting/kesan')->with('sukses', 'Kesan Berhasil Ditambah');
     }
 
     public function hapusKesan(Request $request)
@@ -290,6 +290,6 @@ class AdminController extends Controller
         $Kesan->delete();
 
         // Alihkan dengan sukses
-        return redirect('/dashboard/kesan')->with('sukses', 'Kesan Berhasil Dihapus'); 
+        return redirect('/dashboard/setting/kesan')->with('sukses', 'Kesan Berhasil Dihapus'); 
     }
 }

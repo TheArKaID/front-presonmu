@@ -20,11 +20,11 @@
                             <span class="mini-click-non">Setting</span>
                         </a>
                         <ul class="submenu-angle" aria-expanded="true">
-                            <li><a title="Tahun" class="{{ Request::is('dashboard/tahun') ? 'active' : '' }}" href="/dashboard/tahun"><span class="mini-sub-pro">Tahun</span></a></li>
-                            <li><a title="Tentang" class="{{ Request::is('dashboard/tentang') ? 'active' : '' }}" href="/dashboard/tentang"><span class="mini-sub-pro">Tentang</span></a></li>
-                            <li><a title="Kegiatan" class="{{ Request::is('dashboard/kegiatan') ? 'active' : '' }}" href="/dashboard/kegiatan"><span class="mini-sub-pro">Kegiatan</span></a></li>
-                            <li><a title="Alur" class="{{ Request::is('dashboard/alur') ? 'active' : '' }}" href="/dashboard/alur"><span class="mini-sub-pro">Alur</span></a></li>
-                            <li><a title="Kesan" class="{{ Request::is('dashboard/kesan') ? 'active' : '' }}" href="/dashboard/kesan"><span class="mini-sub-pro">Kesan</span></a></li>
+                            <li><a title="Tahun" class="{{ Request::is('dashboard/setting/tahun') ? 'active' : '' }}" href="/dashboard/setting/tahun"><span class="mini-sub-pro">Tahun</span></a></li>
+                            <li><a title="Tentang" class="{{ Request::is('dashboard/setting/tentang') ? 'active' : '' }}" href="/dashboard/setting/tentang"><span class="mini-sub-pro">Tentang</span></a></li>
+                            <li><a title="Kegiatan" class="{{ Request::is('dashboard/setting/kegiatan') ? 'active' : '' }}" href="/dashboard/setting/kegiatan"><span class="mini-sub-pro">Kegiatan</span></a></li>
+                            <li><a title="Alur" class="{{ Request::is('dashboard/setting/alur') ? 'active' : '' }}" href="/dashboard/setting/alur"><span class="mini-sub-pro">Alur</span></a></li>
+                            <li><a title="Kesan" class="{{ Request::is('dashboard/setting/kesan') ? 'active' : '' }}" href="/dashboard/setting/kesan"><span class="mini-sub-pro">Kesan</span></a></li>
                         </ul>
                     </li>
                 </ul>

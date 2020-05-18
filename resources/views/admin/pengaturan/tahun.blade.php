@@ -25,7 +25,7 @@
                                             $tahunmulai = session('tahunmulai');
                                             $tahunselesai = session('tahunselesai');
                                         @endphp
-                                        {!! Form::open(['url' => '/dashboard/tahun/tambah']) !!}
+                                        {!! Form::open(['url' => '/dashboard/setting/tahun/tambah']) !!}
                                             <div class="form-group-inner">
                                                 <div class="row">
                                                     <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
@@ -65,7 +65,7 @@
                     <div class="sparkline10-graph">
                         <div class="basic-login-form-ad">
                             <div class="row">
-                                {!! Form::open(['url' => '/dashboard/tahun/simpan']) !!}
+                                {!! Form::open(['url' => '/dashboard/setting/tahun/simpan']) !!}
                                 <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
                                     <div class="form-select-list">
                                         {!! Form::select('tahun', [$tahun], $tahunaktif, ['class' => 'form-control custom-select-value']) !!}

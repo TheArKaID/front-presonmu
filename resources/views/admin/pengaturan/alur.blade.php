@@ -65,7 +65,7 @@
                     </div>
                     <div class="sparkline12-graph">
                         <div class="panel-body">
-                                {!! Form::open(['url' => '/dashboard/alur/tambah', 'class' => 'uploader', 'accept-charset' => 'utf-8', 'enctype' => 'multipart/form-data']) !!}
+                                {!! Form::open(['url' => '/dashboard/setting/alur/tambah', 'class' => 'uploader', 'accept-charset' => 'utf-8', 'enctype' => 'multipart/form-data']) !!}
                                 {!! Form::text('judul', '', ['class' => 'form-control', 'placeholder' => 'Judul']) !!}
                                 {!! Form::text('tanggal', '', ['class' => 'form-control', 'placeholder' => 'Tanggal']) !!}
                                 {!! Form::textarea('deskripsi', '', ['class' => 'form-control', 'placeholder' => 'Deskripsi']) !!}
@@ -126,7 +126,7 @@
                                     <div class="row">
                                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                             <div class="all-form-element-inner">
-                                                <form action="/dashboard/alur/simpan" method="POST">
+                                                <form action="/dashboard/setting/alur/simpan" method="POST">
                                                     {{ csrf_field() }}
                                                     <input id="editid" type="hidden" name="id">
                                                     <div class="form-group-inner">
@@ -202,7 +202,7 @@
             <div class="modal-footer danger-md">
                 <button data-dismiss="modal" href="#" class="btn btn-success">Cancel</button>
                 {{-- <a href="#">Process</a> --}}
-                {!! Form::open(['url' => '/dashboard/alur/hapus', 'style' => 'float: right']) !!}
+                {!! Form::open(['url' => '/dashboard/setting/alur/hapus', 'style' => 'float: right']) !!}
                 {!! Form::hidden('id', '', ['id' => 'hapusid']) !!}
                 {!! Form::submit('Hapus', ['class' => 'btn btn-danger']) !!}
                 {!! Form::close() !!}
