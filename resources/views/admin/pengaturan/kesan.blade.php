@@ -4,7 +4,7 @@
     <link rel="stylesheet" href="{{asset('/adminres/css/modals.css')}}">
 @endsection
 @section('title')
-    Kegiatan | Presonmu
+    Kesan | Presonmu
 @endsection
 @section('content')
 <div class="analytics-sparkle-area">
@@ -18,7 +18,7 @@
                         </div>
                     </div>
                     <div class="sparkline12-graph">
-                        <div class="panel-body">
+                        <div>
                             <div class="static-table-list">
                                 <table class="table table-hover">
                                     <thead>
@@ -148,7 +148,6 @@
 <script>
     function showGambar(Image, title) {
         var t = document.getElementById('ModalTitleGambar');
-        // var p = document.getElementById('pImage');
         var img1 = document.getElementById('imgCarousel1');
 
         img1.src = "{{asset('/front/img/kesan')}}/"+Image;
@@ -159,7 +158,7 @@
     function hapus(id, nama) {
         var idhapusid = document.getElementById('hapusid');
         var idhapusnama = document.getElementById('hapusnama');
-        console.log(nama);
+        
         idhapusid.value = id;
         idhapusnama.innerHTML = "Anda akan menghapus kesan dari "+nama;
     }

@@ -18,7 +18,7 @@
                         </div>
                     </div>
                     <div class="sparkline12-graph">
-                        <div class="panel-body">
+                        <div>
                             <div class="static-table-list">
                                 <table class="table table-hover">
                                     <thead>
