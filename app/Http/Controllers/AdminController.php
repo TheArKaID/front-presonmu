@@ -186,6 +186,19 @@ class AdminController extends Controller
  
     }
 
+    public function hapusKegiatan(Request $request)
+    {
+        $kegiatan = Kegiatan::find($request->id);
+        $images = explode('|', $kegiatan->gambar);
+        foreach ($images as $image) {
+            Storage::delete('public/kegiatan/'.$image);
+        }
+
+        $kegiatan->delete();
+
+        return redirect('/dashboard/kegiatan')->with('sukses', 'Kegiatan Berhasil Dihapus'); 
+    }
+
     public function tambahAlur(Request $request)
     {
         $this->validate($request,[

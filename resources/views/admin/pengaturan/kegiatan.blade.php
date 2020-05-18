@@ -18,7 +18,7 @@
                         </div>
                     </div>
                     <div class="sparkline12-graph">
-                        <div class="panel-body">
+                        <div>
                             <div class="static-table-list">
                                 <table class="table table-hover">
                                     <thead>
@@ -39,8 +39,8 @@
                                             <td>{{$no}}</td>
                                             <td>{{$k->judul}}</td>
                                             <td style="word-wrap: break-word; max-width: 200px;">{{$k->deskripsi}}</td>
-                                            <td><a class="btn btn-warning" style="border-radius: 3px;" href="#" data-toggle="modal" data-target="#ModalLihatGambar" onclick="showGambar('{{$k->gambar}}', '{{$k->judul}}')">Lihat</a></td>
-                                            <td><a class="btn btn-danger" style="border-radius: 3px;" href="#" data-toggle="modal" data-target="#PrimaryModalhdbgcl" onclick="hapus('')">Hapus</a></td>
+                                            <td><a class="btn btn-warning" style="border-radius: 3px" href="#" data-toggle="modal" data-target="#ModalLihatGambar" onclick="showGambar('{{$k->gambar}}', '{{$k->judul}}')">Lihat</a></td>
+                                            <td><a class="btn btn-danger" style="border-radius: 3px" href="#" data-toggle="modal" data-target="#PrimaryModalhdbgcl" onclick="hapus('{{$k->id}}', '{{$k->judul}}')">Hapus</a></td>
                                         </tr>
                                         @php
                                             $no++;
@@ -138,19 +138,25 @@
 <div id="PrimaryModalhdbgcl" class="modal modal-edu-general default-popup-PrimaryModal fade" role="dialog">
     <div class="modal-dialog">
         <div class="modal-content">
-            <div class="modal-header header-color-modal bg-color-1">
-                <h4 class="modal-title">Alasan Pendaftar</h4>
+            <div class="modal-header header-color-modal bg-color-4">
+                <h4 class="modal-title">Hapus Kegiatan</h4>
                 <div class="modal-close-area modal-close-df">
-                    <a class="close" data-dismiss="modal" href="#"><i class="fa fa-close"></i></a>
+                    <a class="close bg-color-4" data-dismiss="modal" style="background: #F45846;" href="#"><i class="fa fa-close"></i></a>
                 </div>
             </div>
             <div class="modal-body">
                 {{-- <i class="educate-icon educate-checked modal-check-pro"></i>
                 <h2></h2> --}}
-                <p id="pMessage">The Modal plugin is a dialog box/popup window that is displayed on top of the current page</p>
+                <p id="hapusnama">Hapus Pesan</p>
+                <p>Semua gambar terkait akan dihapus.</p>
             </div>
             <div class="modal-footer">
-                <a data-dismiss="modal" href="#">Tutup</a>
+                {{-- <a data-dismiss="modal" href="#">Tutup</a> --}}
+                {!! Form::open(['url' => '/dashboard/kegiatan/hapus', 'style' => 'float: right']) !!}
+                {!! Form::hidden('id', '', ['id' => 'hapusid']) !!}
+                {{-- <a href="#" data-dismiss="modal" class="btn btn-primary">Tutup</a> --}}
+                {!! Form::submit('Hapus', ['class' => 'btn btn-danger']) !!}
+                {!! Form::close() !!}
             </div>
         </div>
     </div>
@@ -175,6 +181,14 @@
         img3.src = "{{asset('storage/kegiatan/')}}/"+srcimg3;
 
         t.innerHTML = 'Gambar untuk '+title;
+    }
+    
+    function hapus(id, nama) {
+        var idhapusid = document.getElementById('hapusid');
+        var idhapusnama = document.getElementById('hapusnama');
+        console.log(nama);
+        idhapusid.value = id;
+        idhapusnama.innerHTML = "Anda yakin ingin menghapus Kegiatan  " +nama+ " ini ?";
     }
 </script>
 @endsection
