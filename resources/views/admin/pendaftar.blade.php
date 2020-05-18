@@ -20,7 +20,7 @@
                         </div>
                     </div>
                     <div class="sparkline12-graph">
-                        <div class="static-table-list">
+                        <div class="table-responsive">
                             <table class="table table-hover">
                                 <thead>
                                     <tr>
@@ -43,7 +43,6 @@
                                         <td>{{$p->jenis_kelamin=='L' ? 'Laki-laki' : 'Perempuan'}}</td>
                                         <td>{{$p->email}}</td>
                                         <td>{{$p->telpon}}</td>
-                                        {{-- <td>{{$p->alasan}}</td> --}}
                                         <td><a class="btn btn-primary" style="background: #1e732f;border-radius: 3px;" href="#" data-toggle="modal" data-target="#PrimaryModalhdbgcl" onclick="showAlasan('{{$p->alasan}}')">Alasan</a></td>
                                     </tr>
                                     @php
