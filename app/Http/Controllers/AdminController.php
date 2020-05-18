@@ -270,16 +270,26 @@ class AdminController extends Controller
         $request->file('gambar')->storeAs('public/kesan', $name);
         $gambar=$name;
 
+        //Update data kesan dengan nama gambar
+        $kesan->gambar = $gambar;
+        $kesan->save();
+        
         // Alihkan dengan sukses
         return redirect('/dashboard/kesan')->with('sukses', 'Kesan Berhasil Ditambah');
     }
 
     public function hapusKesan(Request $request)
     {
-        $input = $request->all();
-        $Kesan = \App\Kesan::find($input['id']);
+        // Cari kesan berdasarkan ID
+        $Kesan = Kesan::find($request->id);
+        
+        //Hapus Kesan di Storage
+        Storage::delete('public/kesan/'.$Kesan->gambar);
+
+        // Hapus kesan di DB
         $Kesan->delete();
 
+        // Alihkan dengan sukses
         return redirect('/dashboard/kesan')->with('sukses', 'Kesan Berhasil Dihapus'); 
     }
 }
