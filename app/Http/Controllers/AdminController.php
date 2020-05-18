@@ -8,6 +8,7 @@ use Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\Kegiatan;
+use App\Kesan;
 
 class AdminController extends Controller
 {
@@ -250,24 +251,26 @@ class AdminController extends Controller
             'nama' => 'required',
             'status' => 'required',
             'kesan' => 'required',
-            'gambar' => 'required'
+            'gambar' => 'required|mimes:jpeg,png,jpg|max:2048'
         ]);
         
-        $input=$request->all();
         $gambar="";
-        if($file=$request->file('gambar')){
-                $name=$file->getClientOriginalName();
-                $file->move('front/img/kesan',$name);
-                $gambar=$name;
-        }
+        
+        // Input data terlebih dahulu
+        $kesan = new Kesan;
+        $kesan->nama = $request->nama;
+        $kesan->status = $request->status;
+        $kesan->kesan = $request->kesan;
+        $kesan->gambar = $gambar;
+        $kesan->save();
 
-        \App\Kesan::insert( [
-            'nama' => $input['nama'],
-            'status' =>$input['status'],
-            'kesan' =>$input['kesan'],
-            'gambar'=>  $gambar
-        ]);
+        // Pindahkan Gambar
+        $ext = $request->file('gambar')->getClientOriginalExtension();
+        $name = 'K'. $kesan->id .'.'. $ext;
+        $request->file('gambar')->storeAs('public/kesan', $name);
+        $gambar=$name;
 
+        // Alihkan dengan sukses
         return redirect('/dashboard/kesan')->with('sukses', 'Kesan Berhasil Ditambah');
     }
 
