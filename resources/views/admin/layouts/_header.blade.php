@@ -633,13 +633,14 @@
                         <nav id="dropdown">
                             <ul class="mobile-menu-nav">
                                 <li><a href="/dashboard">Dashboard</a></li>
-                                <li><a data-toggle="collapse" data-target="#Charts" href="#">Home <span class="admin-project-icon edu-icon edu-down-arrow"></span></a>
+                                <li><a href="/dashboard/pendaftar">Pendaftar</a></li>
+                                <li><a data-toggle="collapse" data-target="#Charts" href="#">Pengaturan <span class="admin-project-icon edu-icon edu-down-arrow"></span></a>
                                     <ul class="collapse dropdown-header-top">
-                                        <li><a href="index.html">Dashboard v.1</a></li>
-                                        <li><a href="index-1.html">Dashboard v.2</a></li>
-                                        <li><a href="index-3.html">Dashboard v.3</a></li>
-                                        <li><a href="analytics.html">Analytics</a></li>
-                                        <li><a href="widgets.html">Widgets</a></li>
+                                        <li><a title="Tahun" href="/dashboard/tahun">Tahun</a></li>
+                                        <li><a title="Tentang" href="/dashboard/tentang">Tentang</a></li>
+                                        <li><a title="Kegiatan" href="/dashboard/kegiatan">Kegiatan</a></li>
+                                        <li><a title="Alur" href="/dashboard/alur">Alur</a></li>
+                                        <li><a title="Kesan" href="/dashboard/kesan">Kesan</a></li>
                                     </ul>
                                 </li>
                             </ul>

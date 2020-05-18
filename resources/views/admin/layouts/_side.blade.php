@@ -12,7 +12,7 @@
                         <a title="Landing Page" href="/dashboard" aria-expanded="false"><span class="educate-icon educate-event icon-wrap sub-icon-mg" aria-hidden="true"></span> <span class="mini-click-non">Dashboard</span></a>
                     </li>
                     <li>
-                        <a title="Landing Page" href="/pendaftar" aria-expanded="false"><span class="educate-icon educate-event icon-wrap sub-icon-mg" aria-hidden="true"></span> <span class="mini-click-non">Pendaftar</span></a>
+                        <a title="Landing Page" href="/dashboard/pendaftar" aria-expanded="false"><span class="educate-icon educate-event icon-wrap sub-icon-mg" aria-hidden="true"></span> <span class="mini-click-non">Pendaftar</span></a>
                     </li>
                     <li>
                         <a class="has-arrow" href="#">
