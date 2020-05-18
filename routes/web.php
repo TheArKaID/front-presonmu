@@ -25,7 +25,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/dashboard/tahun/tambah', 'AdminController@tambahTahun');
     Route::post('/dashboard/tahun/simpan', 'AdminController@simpanTahun');
 
-    Route::get('/pendaftar', 'AdminController@pendaftar');
+    Route::get('/dashboard/pendaftar', 'AdminController@pendaftar');
 
     Route::get('/dashboard/tentang', 'AdminController@tentang');
     Route::post('/dashboard/tentang/simpan', 'AdminController@simpanTentang');
