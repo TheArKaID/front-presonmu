@@ -14,12 +14,23 @@
                     <li>
                         <a title="Landing Page" class="{{ Request::is('dashboard/pendaftar') ? 'active' : '' }}" href="/dashboard/pendaftar" aria-expanded="false"><span class="educate-icon educate-event icon-wrap sub-icon-mg" aria-hidden="true"></span> <span class="mini-click-non">Pendaftar</span></a>
                     </li>
-                    <li>
-                        <a class="has-arrow" href="#">
+                    @php
+                        if(Request::is('dashboard/setting/*')){
+                            $liclass = "active";
+                            $ariaexp = "true";
+                            $ulclass = "show";
+                        } else{
+                            $liclass = "";
+                            $ariaexp = "false";
+                            $ulclass = "";
+                        }
+                    @endphp
+                    <li class="{{ $liclass }}">
+                        <a class="has-arrow" href="#" aria-expanded="{{ $ariaexp }}">
                             <span class="educate-icon educate-home icon-wrap"></span>
                             <span class="mini-click-non">Setting</span>
                         </a>
-                        <ul class="submenu-angle" aria-expanded="true">
+                        <ul class="submenu-angle collapse {{ $ulclass }}" aria-expanded="true">
                             <li><a title="Tahun" class="{{ Request::is('dashboard/setting/tahun') ? 'active' : '' }}" href="/dashboard/setting/tahun"><span class="mini-sub-pro">Tahun</span></a></li>
                             <li><a title="Tentang" class="{{ Request::is('dashboard/setting/tentang') ? 'active' : '' }}" href="/dashboard/setting/tentang"><span class="mini-sub-pro">Tentang</span></a></li>
                             <li><a title="Kegiatan" class="{{ Request::is('dashboard/setting/kegiatan') ? 'active' : '' }}" href="/dashboard/setting/kegiatan"><span class="mini-sub-pro">Kegiatan</span></a></li>
