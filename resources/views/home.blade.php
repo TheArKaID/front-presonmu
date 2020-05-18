@@ -134,7 +134,7 @@
                   <i class="fas fa-plus fa-3x"></i>
                 </div>
               </div>
-              <img class="img-fluid" src="{{asset('/front/img/kegiatan')}}/{{$thumbnail}}" alt="">
+              <img class="img-fluid" src="{{asset('storage/kegiatan')}}/{{$thumbnail}}" alt="">
             </a>
             <div class="portfolio-caption">
               <h4>{{$k->judul}}</h4>
@@ -461,9 +461,9 @@
     var srcimg2 = srcimg[1];
     var srcimg3 = srcimg[2];
     
-    img1.src = "{{asset('/front/img/kegiatan')}}/"+srcimg1;
-    img2.src = "{{asset('/front/img/kegiatan')}}/"+srcimg2;
-    img3.src = "{{asset('/front/img/kegiatan')}}/"+srcimg3;
+    img1.src = "{{asset('storage/kegiatan/')}}/"+srcimg1;
+    img2.src = "{{asset('storage/kegiatan/')}}/"+srcimg2;
+    img3.src = "{{asset('storage/kegiatan/')}}/"+srcimg3;
 
     t.innerHTML = title;
     d.innerHTML = deskripsi;
